@@ -28,6 +28,16 @@ typedef struct {
 
     /* ADD ANY STRUCT ENTRIES YOU NEED HERE */
     /* IMPLEMENT THIS */
+
+    pthread_mutex_t mutex;
+    pthread_cond_t cond;
+
+    //closed flag
+    unsigned char end_flag;
+
+    //Notifiers list for events on this list
+    list_t* Notifiers;
+
 } chan_t;
 
 typedef struct {
